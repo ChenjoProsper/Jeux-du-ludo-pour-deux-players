@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Mon Ludo</title>
+</head>
+<body>
+    <audio id="background-music" src="Media/NETFLIX-MOVIE-Ludo-All-Background-Music-_-For-Comedy-and-Thriller-Video-_1_.mp3" autoplay loop></audio>
+    <audio class="pion" id="effect-music" src="Media/bone-shell-85732.mp3" autoplay loop></audio>
+    <audio class="pion" id="effect-music2" src="" autoplay loop></audio>
+    <section>
+        <div>
+            <button onclick="lancement('p1','p2')" class="player" id="p1">Player 1</button>
+        </div>
+        <div class="ludo">
+            <div class="rouge" id="HomeRouge">
+                <div class="pion pion-red pion1" id="pion-red1" onclick="deplacer('pion-red1','red','p2')">-1</div>
+                <div class="pion pion-red pion2" id="pion-red2" onclick="deplacer('pion-red2','red','p2')">-1</div>
+                <div class="pion pion-red pion3" id="pion-red3" onclick="deplacer('pion-red3','red','p2')">-1</div>
+                <div class="pion pion-red pion4" id="pion-red4" onclick="deplacer('pion-red4','red','p2')">-1</div>
+            </div>
+            <div class="blanc-rouge">
+                <div class="blanc" id="51"></div>
+                <div class="blanc rede" id="0"></div>
+                <div class="blanc" id="1"></div>
+                <div class="blanc" id="2"></div>
+                <div class="blanc" id="3"></div>
+                <div class="blanc" id="4"></div>
+                <div class="blanc" id="50"></div>
+                <div class="blanc rede" id="52"></div>
+                <div class="blanc rede" id="53"></div>
+                <div class="blanc rede" id="54"></div>
+                <div class="blanc rede" id="55"></div>
+                <div class="blanc rede" id="56"></div>
+                <div class="blanc" id="49"></div>
+                <div class="blanc" id="48"></div>
+                <div class="blanc" id="47"></div>
+                <div class="blanc" id="46"></div>
+                <div class="blanc" id="45"></div>
+                <div class="blanc" id="44"></div>
+            </div>
+            <div class="blanc-bleu">
+                <div class="blanc" id="10"></div>
+                <div class="blanc" id="11"></div>
+                <div class="blanc" id="12"></div>
+                <div class="blanc" id="9"></div>
+                <div class="blanc bleue" id="57"></div>
+                <div class="blanc bleue" id="13"></div>
+                <div class="blanc" id="8"></div>
+                <div class="blanc bleue" id="58"></div>
+                <div class="blanc" id="14"></div>
+                <div class="blanc" id="7"></div>
+                <div class="blanc bleue" id="59"></div>
+                <div class="blanc" id="15"></div>
+                <div class="blanc" id="6"></div>
+                <div class="blanc bleue" id="60"></div>
+                <div class="blanc" id="16"></div>
+                <div class="blanc" id="5"></div>
+                <div class="blanc bleue" id="61"></div>
+                <div class="blanc" id="17"></div>
+            </div>
+            <div class="blanc-jaune">
+                <div class="blanc" id="18"></div>
+                <div class="blanc" id="19"></div>
+                <div class="blanc" id="20"></div>
+                <div class="blanc" id="21"></div>
+                <div class="blanc" id="22"></div>
+                <div class="blanc" id="23"></div>
+                <div class="blanc  jaunee" id="66"></div>
+                <div class="blanc  jaunee" id="65"></div>
+                <div class="blanc  jaunee" id="64"></div>
+                <div class="blanc  jaunee" id="63"></div>
+                <div class="blanc jaunee" id="62"></div>
+                <div class="blanc" id="24"></div>
+                <div class="blanc" id="30"></div>
+                <div class="blanc" id="29"></div>
+                <div class="blanc" id="28"></div>
+                <div class="blanc" id="27"></div>
+                <div class="blanc jaunee" id="26"></div>
+                <div class="blanc" id="25"></div>
+            </div>
+            <div class="blanc-vert">
+                <div class="blanc" id="43"></div>
+                <div class="blanc verte"></div>
+                <div class="blanc" id="31"></div>
+                <div class="blanc" id="42"></div>
+                <div class="blanc verte"></div>
+                <div class="blanc" id="32"></div>
+                <div class="blanc" id="41"></div>
+                <div class="blanc verte"></div>
+                <div class="blanc" id="33"></div>
+                <div class="blanc" id="40"></div>
+                <div class="blanc verte"></div>
+                <div class="blanc" id="34"></div>
+                <div class="blanc verte" id="39"></div>
+                <div class="blanc verte"></div>
+                <div class="blanc" id="35"></div>
+                <div class="blanc" id="38"></div>
+                <div class="blanc" id="37"></div>
+                <div class="blanc" id="36"></div>
+            </div>
+            <div class="vert home">
+                <div class="pion pion-vert pion1" id="vert1"></div>
+                <div class="pion pion-vert pion2" id="vert2"></div>
+                <div class="pion pion-vert pion3" id="vert3"></div>
+                <div class="pion pion-vert pion4" id="vert4"></div>
+            </div>
+            <div class="centre" id="centre">
+            </div>
+            <div class="jaune" id="HomeJaune">
+                <div class="pion pion-jaune pion1" id="pion-jaune1" onclick="deplacer('pion-jaune1','jaune','p1')">-1</div>
+                <div class="pion pion-jaune pion2" id="pion-jaune2" onclick="deplacer('pion-jaune2','jaune','p1')">-1</div>
+                <div class="pion pion-jaune pion3" id="pion-jaune3" onclick="deplacer('pion-jaune3','jaune','p1')">-1</div>
+                <div class="pion pion-jaune pion4" id="pion-jaune4" onclick="deplacer('pion-jaune4','jaune','p1')">-1</div>
+            </div>
+            <div class="bleu home">
+                <div class="pion pion-bleu pion1" id="bleu1"></div>
+                <div class="pion pion-bleu pion2" id="bleu2"></div>
+                <div class="pion pion-bleu pion3" id="bleu3"></div>
+                <div class="pion pion-bleu pion4" id="bleu4"></div>
+            </div>
+        </div>
+        <div>
+            <button onclick="lancement('p2','p1')" class="player" id="p2">Player 2</button>
+        </div>
+        
+    </section>
+    <aside>
+        <a href="index.html" id="reset">Reset</a>
+    </aside>
+    <script src="action.js"></script>
+
+</body>
+</html>
