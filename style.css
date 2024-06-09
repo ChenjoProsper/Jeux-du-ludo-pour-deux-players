@@ -12,18 +12,23 @@ body{
     align-items: center;
     display: flex;
     flex-direction: column;
+/*     margin:auto; */
 }
 
 section{
     display: grid;
     grid-template-columns: repeat(3,auto);
     grid-gap: 10%;
+    margin:auto;
 }
 
 .player{
     position: relative;
     top:48%;
-    font-size: x-large;
+    right:20%;
+    display: flex;
+    justify-content: center; /* Centre les boutons horizontalement */
+    align-items: center; /* Aligne les boutons verticalement */
 }
 
 aside{
@@ -32,21 +37,22 @@ aside{
 }
 
 #reset{
-    position: relative;
-    right: 400px;
+/*    position: relative;
+    right: 0%;*/
     font-size: x-large;
     color: antiquewhite;
 }
 
 .ludo{
+    margin:10% 100% 0% -10%;
     border: 5px solid black;
-    width: 750px;
+    width: auto;
     height: auto;
-    min-width: 375px;
+/*    min-width: 375px;*/
     position: relative;
-    right: 50px;
+/*     right: 50px; */
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
     "item1 item1 item2 item3 item3"
     "item1 item1 item2 item3 item3"
     "item4 item4 item5 item6 item6"
@@ -57,7 +63,7 @@ aside{
 .rouge{
     background-image:url("IMG/herman.jpeg");
     background-size: 100% 100%;
-    border: 15px solid red;
+    border: 20% solid red;
     grid-area: item1;
 }
 .blanc-bleu{
@@ -69,9 +75,9 @@ aside{
 .bleu{
     background-image:url("IMG/VavGybZL_400x400.jpg");
     background-size: 100% 100%;
-    border: 15px solid blue;
+    border: 20% solid blue;
     grid-area: item3;
-    
+
 }
 .blanc-jaune{
     grid-area: item6;
@@ -82,7 +88,7 @@ aside{
 .jaune{
     background-image:url("IMG/messi.jpeg");
     background-size: 100% 100%;
-    border: 15px solid yellow;
+    border: 20% solid yellow;
     grid-area: item9;
 }
 .blanc-vert{
@@ -100,7 +106,7 @@ aside{
 .vert{
     background-image:url("IMG/Nzekon.jpeg");
     background-size: 100% 100%;
-    border: 15px solid green;
+    border: 20% solid green;
     grid-area: item7;
 }
 
@@ -108,12 +114,12 @@ aside{
     background-image: url(IMG/centre.gif);
     background-size: 100% 100%;
 }
-.centre img{
+/*.centre img{
     grid-area: item5;
-    width: 80px;
+    width: auto;
     position: relative;
     top: 30%;
-}
+}*/
 
 .blanc{
     border: 1px solid black;
@@ -146,18 +152,18 @@ aside{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding: 0%;
+    padding: 1%;
 }
 
 .pion{
-    width: 24px;
-    height: 24px;
+    width: 25px;
+    height: 25px;
     position: relative;
     border: 5px solid black;
     border-radius: 100%;
     text-align: center;
     justify-content: center;
-    padding: 5px;
+/*     padding: 1%; */
 }
 
 @keyframes example {
@@ -221,9 +227,8 @@ aside{
 
 
 .player{
-    border-radius: 45%;
-    position: relative;
     font-size: xx-large;
+    border-radius: 45%;
     color: coral;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
     font-weight: bolder;
@@ -231,8 +236,56 @@ aside{
     animation-name: example;
     animation-duration: 10s;
     animation-iteration-count: infinite;
+    padding: 10%;
 }
 
 #p2{
+    position:relative;
+    left:-170%;
     visibility: hidden;
+}
+
+
+@media all and (max-width: 1024px){
+        .blanc-bleu{
+        grid-area: item2;
+        display: grid;
+        grid-template-columns: repeat(3,28px);
+        grid-template-rows: repeat(6,28px);
+        }
+    .blanc-jaune{
+        grid-area: item6;
+        display: grid;
+        grid-template-columns: repeat(6,28px);
+        grid-template-rows: repeat(3,28px);
+        }
+    .blanc-vert{
+        grid-area: item8;
+        display: grid;
+        grid-template-columns: repeat(3,28px);
+        grid-template-rows: repeat(6,28px);
+        }
+    .blanc-rouge{
+        grid-area: item4;
+        display: grid;
+        grid-template-columns: repeat(6,28px);
+        grid-template-rows: repeat(3,28px);
+        }
+        #p2{
+            position:relative;
+            left:-150%;
+            visibility: hidden;
+        }
+        .pion{
+            width: 10px;
+            height: 10px;
+        }
+        .player{
+            font-size: medium;
+            margin:0%;
+            padding:0%;
+        }
+        .ludo{
+            margin:10% 100% 0% -10%;
+        }
 }
