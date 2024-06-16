@@ -1,0 +1,325 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+body{
+    background-image: url("IMG/terrain.jpg");
+    /* opacity: 95%; */
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+/*     margin:auto; */
+}
+
+section{
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    grid-gap: 10%;
+    margin:auto;
+}
+
+.player{
+    position: relative;
+    top:48%;
+    right:20%;
+    /* display: flex; */
+    /* justify-content: center; 
+    align-items: center; */
+}
+
+aside{
+    display:inline-flex;
+    margin: 1%;
+}
+
+#reset{
+/*    position: relative;
+    right: 0%;*/
+    font-size: x-large;
+    background-color: rgb(61, 40, 40);
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+#reset:hover{
+    background-color: rgb(136, 10, 10);
+    color: 1px 1px 2px rgb(189, 13, 13), 0 0 25px blue, 0 0 5px darkblue;
+    text-shadow: white;
+}
+
+.ludo{
+    margin:10% 100% 0% -10%;
+    width: auto;
+    height: auto;
+/*    min-width: 375px;*/
+    position: relative;
+/*     right: 50px; */
+    display: grid;
+    grid-template-areas:
+    "item1 item1 item2 item3 item3"
+    "item1 item1 item2 item3 item3"
+    "item4 item4 item5 item6 item6"
+    "item7 item7 item8 item9 item9"
+    "item7 item7 item8 item9 item9";
+}
+
+.rouge{
+    background-image:url("IMG/herman.jpeg");
+    background-size: 100% 100%;
+    border: 20% solid red;
+    grid-area: item1;
+}
+.blanc-bleu{
+    grid-area: item2;
+    display: grid;
+    grid-template-columns: repeat(3,50px);
+    grid-template-rows: repeat(6,50px);
+}
+.bleu{
+    background-image:url("IMG/VavGybZL_400x400.jpg");
+    background-size: 100% 100%;
+    border: 20% solid blue;
+    grid-area: item3;
+
+}
+.blanc-jaune{
+    grid-area: item6;
+    display: grid;
+    grid-template-columns: repeat(6,50px);
+    grid-template-rows: repeat(3,50px);
+}
+.jaune{
+    background-image:url("IMG/messi.jpeg");
+    background-size: 100% 100%;
+    border: 20% solid yellow;
+    grid-area: item9;
+}
+.blanc-vert{
+    grid-area: item8;
+    display: grid;
+    grid-template-columns: repeat(3,50px);
+    grid-template-rows: repeat(6,50px);
+}
+.blanc-rouge{
+    grid-area: item4;
+    display: grid;
+    grid-template-columns: repeat(6,50px);
+    grid-template-rows: repeat(3,50px);
+}
+.vert{
+    background-image:url("IMG/Nzekon.jpeg");
+    background-size: 100% 100%;
+    border: 20% solid green;
+    grid-area: item7;
+}
+
+.centre{
+    background-image: url(IMG/centre.gif);
+    background-size: 100% 100%;
+}
+/*.centre img{
+    grid-area: item5;
+    width: auto;
+    position: relative;
+    top: 30%;
+}*/
+
+.blanc{
+    border: 1px solid black;
+    background-color: rgb(18, 26, 32);
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+
+}
+
+.rede{
+    background-color: red;
+}
+
+.verte{
+    background-color: green;
+}
+
+.jaunee{
+    background-color: yellow;
+}
+
+.bleue{
+    background-color: blue;
+}
+
+.vert, .bleu, .rouge, .jaune{
+    border: 45px solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1%;
+}
+
+.pion{
+    width: 33px;
+    height: 33px;
+    position: relative;
+    border: 5px solid black;
+    border-radius: 100%;
+    text-align: center;
+    justify-content: center;
+/*     padding: 1%; */
+}
+
+@keyframes example {
+    0%  {border:7px solid rgb(0, 0, 0);}
+    25%   {border:7px solid white;}
+    50%  {border:7px solid rgb(0, 0, 0);}
+    75%  {border:7px solid white;}
+    100% {border:7px solid rgb(0, 0, 0);}
+    }
+
+
+.pion-jaune{
+    animation-name: example;
+    animation-duration: 13s;
+    animation-iteration-count: infinite;
+    background-color: rgb(201, 204, 20);
+    color: rgb(201, 204, 20);
+    border:5px solid rgb(0, 0, 0);
+}
+.pion-bleu{
+    background-color: rgb(14, 14, 94);
+    border:5px solid rgb(0, 0, 0);
+}
+
+.pion-red{
+    background-color: rgb(167, 37, 37);
+    color: rgb(167, 37, 37);
+    border:5px solid rgb(0, 0, 0);
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+}
+
+.pion-vert{
+    background-color: rgb(19, 80, 29);
+    border:5px solid rgb(0, 0, 0);
+}
+
+.pion:hover{
+    background-color: black;
+    color: black;
+    src: "Media/rapid-wind-sound-effect-1-108398.mp3";
+}
+
+.player:hover{
+    background-color: blue;
+    text-shadow: 2px 2px 5px red;
+}
+
+
+.player:focus{
+    background-color: red;
+    color: white;
+    text-shadow: 1px 1px 2px black, 0 0 25px blue, 0 0 5px darkblue;
+}
+
+.pion1 { top: 5%; left: 8%; transform: translate(-50%, -50%); }
+.pion2 { top: 13%; right: 23%; transform: translate(-50%, -50%); }
+.pion3 { top: 5%; left: 33%; transform: translate(-50%, -50%); }
+.pion4 { top: 13%; left: 8%; transform: translate(-50%, -50%); }
+
+
+.player{
+    font-size: x-large;
+    border-radius: 45%;
+    color: coral;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    font-weight: bolder;
+    font-family: cursive;
+    animation-name: example;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+    padding: 10%;
+    margin: 0px;
+}
+
+#p2{
+    position:relative;
+    left:-170%;
+    visibility: hidden;
+}
+
+
+@media all and (max-width: 1024px){
+    .vert, .bleu, .rouge, .jaune{
+        border: 30px solid;
+    }
+    .blanc-bleu{
+        grid-area: item2;
+        display: grid;
+        grid-template-columns: repeat(3,28px);
+        grid-template-rows: repeat(6,28px);
+    }
+    .blanc-jaune{
+        grid-area: item6;
+        display: grid;
+        grid-template-columns: repeat(6,28px);
+        grid-template-rows: repeat(3,28px);
+        }
+    .blanc-vert{
+        grid-area: item8;
+        display: grid;
+        grid-template-columns: repeat(3,28px);
+        grid-template-rows: repeat(6,28px);
+        }
+    .blanc-rouge{
+        grid-area: item4;
+        display: grid;
+        grid-template-columns: repeat(6,28px);
+        grid-template-rows: repeat(3,28px);
+        }
+    #p2{
+        position:relative;
+        left:-150%;
+        visibility: hidden;
+    }
+    .pion{
+        width: 14px;
+        height: 13px;
+        /* position: relative;
+        left: -5px;
+        top: -5px; */
+        font-size: xx-small;
+    }
+    .player{
+        font-size: medium;
+        margin:0%;
+        padding:0%;
+    }
+    .ludo{
+        margin:10% 100% 0% -10%;
+    }
+    .pion1 { 
+        top: 25%;
+        left: 12%;
+        transform: translate(-50%, -50%);
+    }
+    .pion2 { 
+        top: 28%; 
+        right: 20%; 
+        transform: translate(-50%, -50%); 
+    }
+    .pion3 { 
+        top: 5%; 
+        left: 43%; 
+        transform: translate(-50%, -50%); 
+    }
+    .pion4 { 
+        top: 13%; 
+        left: 12%; 
+        transform: translate(-50%, -50%); 
+    }
+}
