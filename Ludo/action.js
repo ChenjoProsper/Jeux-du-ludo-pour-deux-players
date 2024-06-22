@@ -69,11 +69,11 @@ function resetGame() {
 
 function findPionById(positionsString, pionId) {
     var positions = positionsString.split('|');
-    
+
     for (var i = 0; i < positions.length; i++) {
         var elements = positions[i].split(',');
         var id = elements[0];
-        
+
         if (id === pionId) {
             return id
         }
@@ -166,7 +166,7 @@ async function upGradeGameState() {
 window.onload = upGradeGameState;
 
 
-setInterval(upGradeGameState, 250);
+setInterval(upGradeGameState, 200);
 
 function lancement(id1,id2){
 
@@ -174,7 +174,7 @@ function lancement(id1,id2){
         audio2.src = "Media/dice-142528.mp3"
         audio2.removeAttribute('loop')
         val = Math.floor((Math.random() * 6) + 1);
-        
+
         if(val == 1){
         document.getElementById("centre").style.backgroundImage = "url('IMG/1.jpg')"
         centre = 'IMG/1.jpg'
@@ -224,36 +224,35 @@ function deplacer(id,nature,player){
         if (tmp == 6 && value == -1 ){
             if(nature == 'red'){
                 if(document.getElementById(player).style.visibility === "hidden" || tour == 1){
-                    
+
                     manger('0','pion-red','HomeJaune')
-                    
+
+                    value += 1
+                    point.textContent = value
                     document.getElementById('0').appendChild(point)
-                    
+                    updateGameState();
+
                     sound()
                     point.style.left = "25px"
                     point.style.top = "21px"
-                    value += 1
-                    point.textContent = value
                     tmp = 0
-                    updateGameState();
                 }else{
                     alert("c'est le tour de "+player)
                 }
             }else{
                 if(document.getElementById(player).style.visibility === "hidden"){
-                    
+
                     manger('26','pion-jaune','HomeRouge')
 
+                    value += 1
+                    point.textContent = value
                     document.getElementById('26').appendChild(point)
-                    sound()
+                    updateGameState();
 
                     point.style.left = "25px"
                     point.style.top = "21px"
-                    value += 1
-                    point.textContent = value
-
+                    sound()
                     tmp = 0
-                    updateGameState();
                 }else{
                     alert("c'est le tour de "+player)
                 }
@@ -291,10 +290,10 @@ function deplacer(id,nature,player){
                                     } else {
                                         clearInterval(moveInterval);
                                         tmp = 0
-                                        manger(indice,'pion-red','HomeJaune')
                                         updateGameState();
                                     }
                                 }, 400);
+                                manger(indice,'pion-red','HomeJaune')
                             }
                         }else{
                             alert("c'est le tour de "+player)
@@ -323,15 +322,15 @@ function deplacer(id,nature,player){
                                         value += 1
                                         point.textContent = value
                                         document.getElementById(pos).appendChild(point)
-                                        counter++;
                                         updateGameState();
+                                        counter++;
                                     } else {
                                         clearInterval(moveInterval);
                                         tmp = 0;
-                                        manger(indice,'pion-red','HomeJaune')
                                         updateGameState();
                                     }
                                 }, 400);
+                                manger(indice,'pion-red','HomeJaune')
                             }
                         }else{
                             alert("c'est le tour de "+player)
@@ -369,11 +368,11 @@ function deplacer(id,nature,player){
                                             counter++;
                                         } else {
                                             clearInterval(moveInterval);
-                                            manger(indice,'pion-jaune','HomeRouge')
-                                            updateGameState();
                                             tmp = 0;
+                                            updateGameState();
                                         }
                                     }, 400);
+                                    manger(indice,'pion-jaune','HomeRouge')
                                 }else{
                                     var parent = point.parentElement
                                     var indice = Math.floor(parent.id)+tmp
@@ -393,11 +392,11 @@ function deplacer(id,nature,player){
                                             updateGameState();
                                         } else {
                                             clearInterval(moveInterval);
-                                            manger(indice,'pion-jaune','HomeRouge')
-                                            updateGameState();
                                             tmp = 0;
+                                            updateGameState();
                                         }
                                     }, 400);
+                                    manger(indice,'pion-jaune','HomeRouge')
                                 }
                             }
                         }else{
@@ -434,11 +433,11 @@ function deplacer(id,nature,player){
                                             counter++;
                                         } else {
                                             clearInterval(moveInterval);
-                                            manger(indice,'pion-jaune','HomeRouge')
-                                            updateGameState();
                                             tmp = 0;
+                                            updateGameState();
                                         }
                                     }, 400);
+                                    manger(indice,'pion-jaune','HomeRouge')
                                 }else{
                                     var parent = point.parentElement
                                     var indice = Math.floor(parent.id)+tmp
@@ -459,10 +458,10 @@ function deplacer(id,nature,player){
                                         } else {
                                             clearInterval(moveInterval);
                                             tmp = 0;
-                                            manger(indice,'pion-jaune','HomeRouge')
                                             updateGameState();
                                         }
                                     }, 400);
+                                    manger(indice,'pion-jaune','HomeRouge')
                                 }
                             }
                         }else{
@@ -492,7 +491,7 @@ function deplacer(id,nature,player){
     audio2.src = "Media/bone-shell-85732.mp3"
     audio2.setAttribute('loop','loop')
     document.getElementById("centre").style.backgroundImage = "url('IMG/centre.gif')"
-    updateGameState();
+    // updateGameState();
 }
 
 addEventListener('keydown', function (e){
@@ -544,7 +543,8 @@ function manger(pos,famille,maison){
             audio3.src = "Media/big-boom-202678.mp3"
             audio3.playbackRate = 2.0
             audio3.removeAttribute('loop')
+            updateGameState();
+            upGradeGameState();
         }
     }
-    updateGameState();
 }
